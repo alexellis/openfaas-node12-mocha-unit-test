@@ -6,16 +6,13 @@ var handler = require('./handler')
 
 describe('Our API', function() {
     it('gives a 201 for any request', function() {
-        let cb = (err, val) => {
-
-        };
+        let cb = (err, val) => {};
         let context = new FunctionContext(cb);
         handler(new FunctionEvent({body: ''}), context)
         .then(() => {
             expect(context.value).to.equal(201);
         })
         .catch(err => {
-            console.log(err)
             expect(err).to.be.empty
         })
     });
