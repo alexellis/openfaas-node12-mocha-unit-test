@@ -4,19 +4,14 @@ var expect = require('chai').expect
 
 var handler = require('./handler')
 
-describe('Tests', function() {
-    it('answer to be 43', function() {
-        var answer = 43;
-        expect(answer).to.equal(43);
-    });
-
-    it('handles stuff', function() {
+describe('Our API', function() {
+    it('gives a 201 for any request', function() {
         let cb = (err, val) => {
 
         };
         let context = new FunctionContext(cb);
-        handler(new FunctionEvent({body:""}), context)
-        .then(()=>{
+        handler(new FunctionEvent({body: ''}), context)
+        .then(() => {
             expect(context.value).to.equal(201);
         })
         .catch(err => {
