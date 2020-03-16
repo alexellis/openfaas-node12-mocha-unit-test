@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  unit-test:
+    lang: node12
+    handler: ./unit-test
+    image: unit-test:latest
+
